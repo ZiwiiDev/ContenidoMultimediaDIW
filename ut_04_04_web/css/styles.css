@@ -1,0 +1,22 @@
+/*-------------------------------------------------------------------------------*/
+/* Defino variables para estilos globales */
+:root {
+    --color-negro: rgb(0, 0, 0); /* Color del borde */
+  }
+/*-------------------------------------------------------------------------------*/
+/* Estilos para el <html> */
+html {
+    overflow-x: hidden;
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para el título del header (título de la empresa) */
+header h1 {
+    color: var(--color-negro);
+    letter-spacing: 10px; /* Separación de 30px entre cada carácter */
+    justify-content: center; /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+    align-content: center; /* Ajusto las líneas dentro del contenedor cuando haya espacio extra */
+    text-shadow: 5px 5px 5px #00d9ff, 10px 10px 10px #6200ff; /* Aplico sombra de dos colores diferentes */
+    grid-column: span 1; /* Hace que el h1 abarque una columna completa */
+    font-size: 50px;
+}
+/*-------------------------------------------------------------------------------*/

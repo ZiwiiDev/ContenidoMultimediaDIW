@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto UD04 · Oliver Fabian Stetcu Stepanov</title>
+
+    <!-- Enlace externo
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    -->
+
+    <!-- Enlaces a los archivos CSS de Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../ut_04_01_img/07_logo.svg">
+
+    <!-- Iconos Vectoriales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<!-- toda la maqueta principal debe estar creada con un solo contenedor flex o grid -->
+<body class="d-flex flex-column min-vh-100">
+    <!-- Cabecera -->
+    <header class="bg-light py-2">
+        <div class="container">
+            <div class="row text-center align-items-center">
+                <div class="col-md-4">
+                    <!-- Logo SVG de la empresa -->
+                    <a class="navbar-brand" href="#">
+                        <img src="../ut_04_01_img/07_logo.svg" alt="Logo">
+                    </a>
+                </div>
+    
+                <div class="col-md-4 name-empresa-container">
+                    <!-- Título de la empresa -->
+                    <h1>SoftEdge</h1>
+                </div>
+    
+                <div class="col-md-4">
+                    <!-- Logo del IES Aguadulce -->
+                    <img src="../ut_04_01_img/logo_ies_aguadulce.png" alt="Logo IES Aguadulce" width="50%" height="80%">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Zona de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navegacion">
+        <div class="container">
+            <a class="navbar-brand" href="#">Inicio</a>
+
+            <!-- Menú de hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#opciones">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Agrega enlaces a los diferentes apartados de la zona de contenido -->
+            <div class="collapse navbar-collapse" id="opciones">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#imagen-container">Imagen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#audio-container">Audio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#video-container">Video</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Footer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Zona de Contenido -->
+    <main class="container flex-grow-1 my-4">
+        <section id="imagen-container">
+            <h2>Parte 1 · Imagen
+                <!-- Enlace con icono vectorial para volver al menú de navegación -->
+                <a href="#navegacion" class="back-to-navigation">
+                    <!-- Icono -->
+                    <i class="fas fa-arrow-up"></i>
+                </a><hr>
+            </h2>
+
+            <article id="imagenes">
+                <h3>Imágenes</h3><hr>
+
+                <!-- Imágenes y sus licencias -->
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <h4>01_imagen.png</h4>
+                        <img src="../ut_04_01_img/01_imagen.png" width="40%" height="70%" alt="Imagen 01"><br><br>
+                        <img src="../ut_04_01_img/cc_licencia.png" width="50%" height="15%" alt="Licencia Imagen 01">
+                    </div>
+    
+                    <div class="col-md-6">
+                        <h4>02_imagen.jpeg</h4>
+                        <img src="../ut_04_01_img/02_imagen.jpeg" width="50%" height="70%" alt="Imagen 02"><br><br>
+                        <img src="../ut_04_01_img/cc-zero-licencia.png" width="50%" height="15%" alt="Licencia Imagen 02">
+                    </div>
+                </div>
+            </article><br>
+
+            <article id="composicion">
+                <h3>Composición</h3><hr>
+    
+                <!-- Imágenes y sus licencias -->
+                <div class="row text-center">
+                    <div class="col-md-5">
+                        <h4>04_composicion.png</h4>
+    
+                        <!-- Inserto la imagen responsiva con las dimensiones mencionadas -->
+                        <picture>
+                            <source media="(max-width: 650px)" srcset="../ut_04_01_img/06_composicion_mejorada_dim_650.jpg" width="80%" height="80%">
+                            <source media="(min-width: 1100px)" srcset="../ut_04_01_img/05_composicion_mejorada_dim_1100.jpg" width="90%" height="90%">
+                            <img src="../ut_04_01_img/04_composicion.png" alt="Imagen 01" width="100%" height="80%">
+                        </picture>
+                        <p><strong>El cambio de imagen ocurre en 650px y en 1100px.</strong></p>
+                    </div>
+                </div>
+            </article>
+        </section><br><br>
+        
+        <section id="audio-container">
+            <h2>Parte 2 · Audio
+                <!-- Enlace con icono vectorial para volver al menú de navegación -->
+                <a href="#navegacion" class="back-to-navigation">
+                    <!-- Icono -->
+                    <i class="fas fa-arrow-up"></i>
+                </a><hr>
+            </h2>
+
+            <article id="audio">
+                <!-- Audio Original -->
+                <h3>Audio Original</h3>
+                <audio controls id="audioOriginal" preload="metadata">
+                    <source src="../ut_04_02_audio/Original Entero.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio><br><br>
+
+                <!-- Creo un conjunto de botones para controlar el reproductor -->
+                <div  class="contenedor_audio">
+                    <h3>Botones Audio Original</h3> 
+                    <button onclick="iniciar()" type="button">Play Video</button>
+                    <button onclick="pausar()" type="button">Pause Video</button>
+                    <button onclick="verDuracion()" type="button">Ver Duración</button>
+                    <button onclick="subirVolumen()" type="button">Subir Volumen</button>
+                    <button onclick="bajarVolumen()" type="button">Bajar Volumen</button>
+                </div><br>
+
+                <!-- Audio con corte de 40 segundos -->
+                <h3>Audio de 40 segundos</h3>
+                <audio controls>
+                    <source src="../ut_04_02_audio/Original 40seg.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio><br><br>
+
+                <!-- Audio de 40 seg con filtros -->
+                <h3>Audio de 40 seg con filtros </h3>
+                <audio controls>
+                    <source src="../ut_04_02_audio/audiofiltros.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio><br><br>
+
+                <!-- Audio resultado -->
+                <h4>Audio: audioresultado.mp3 </h4>
+                <audio controls>
+                    <source src="../ut_04_02_audio/audioresultado.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio><br><br><hr>
+
+                <!-- Audio Resultado 2 -->
+                <h3>Audio: audioresultado_2.mp3</h3>
+                <audio controls>
+                    <source src="../ut_04_02_audio/audioresultado_2.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio><br><br>
+
+                <h4>Audio: audioresultado_2.flac</h4>
+                <audio controls>
+                    <source src="../ut_04_02_audio/audioresultado_2.flac" type="audio/flac">
+                    Tu navegador no soporta el elemento de audio.
+                </audio><br><br>
+
+                <h4>Audio: audioresultado_2.wav</h4>
+                <audio controls>
+                    <source src="../ut_04_02_audio/audioresultado_2.wav" type="audio/wav">
+                    Tu navegador no soporta el elemento de audio.
+                </audio><br><br>
+
+                <!-- Compresiones en formato mp3 -->
+                <h3>Compresiones en formato .mp3</h3><hr><br>
+
+                <!-- Compresión 1 -->
+                <h4>Audio: audioresultado_2_medio.mp3</h4>
+                <audio controls>
+                    <source src="../ut_04_02_audio/audioresultado_2_medio.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio><br><br>
+
+                <!-- Compresión 2 -->
+                <h4>Audio: audioresultado_2_excepcional.mp3</h4>
+                <audio controls>
+                    <source src="../ut_04_02_audio/audioresultado_2_excepcional.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio><br><br>
+
+                <!-- Compresión 3 -->
+                <h4>Audio: audioresultado_2_brutal.mp3</h4>
+                <audio controls>
+                    <source src="../ut_04_02_audio/audioresultado_2_brutal.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio><br><br>
+
+                <!-- Pérdidas entre las compresiones -->
+                <p>
+                    <strong>Realmente la calidad no cambia mucho en cuánto a la hora de escuchar los audios, se
+                    nota un poquito el cambio pero casi inexistente, lo que sí cambia un poco es el peso de
+                    los archivos.</strong>
+                </p><br><br>
+
+                <!-- Fichero optimizado audioresultado_2 -->
+                <h3>Audio: audioresultado_2_optimizado.mp3</h3>
+                <audio controls>
+                    <!-- Diferentes fuentes compatibles con distintos navegadores -->
+                    <source src="../ut_04_02_audio/audioresultado_2_optimizado.mp3" type="audio/mpeg">
+                    <source src="../ut_04_02_audio/01_audio.ogg" type="audio/ogg">
+                    <source src="../ut_04_02_audio/02_audio.aac" type="audio/aac">
+                    Tu navegador no soporta el elemento de audio.
+                </audio><br><br>
+
+                <!-- Medidas para optimizar el sonido -->
+                <h3>Medidas para optimizar el sonido</h3>
+                <ul>
+                    <li><strong>Calidad del audio</strong>: Para mantener un equilibrio entre la calidad y el tamaño
+                        del archivo he reducido la tasa de bits para reducir el tamaño del archivo sin
+                        comprometer la calidad del audio. Le he asignado calidad “Medio, 145-
+                        185kbps”.
+                    </li>
+                    
+                    <li><strong>Duración y contenido</strong>: He revisado la duración del audio y su contenido para
+                        asegurarme de que sea relevante y adecuado para implementarlo en la web.
+                        Está todo correcto como estaba
+                    </li>
+
+                    <li><strong>Eliminación de ruido y edición</strong>: He eliminado cualquier ruido de fondo
+                        innecesario y he realizado ediciones necesarias para mejorar la claridad y la
+                        calidad del audio.
+                    </li>
+
+                    <li><strong>Metadatos</strong>: He eliminado todos los metadatos del audio para disminuir el peso.</li>
+
+                    <li><strong>Frecuencia de muestreo</strong>: He disminuido la frecuencia de muestreo de 44800
+                        Hz a 32000 Hz para optimizar el audio y el peso del archivo, disminuyo el
+                        número de muestras de audio tomadas por segundo durante la grabación.
+                    </li>
+                </ul><br>
+
+                 <!-- Captura de pantalla de los ficheros utilizados -->
+                <h3>Ficheros utilizados:</h3>
+                <img src="./assets/ficheros_audio.png" alt="Captura de pantalla de los Ficheros de Audio utilizados" width="50%">
+            </article>
+        </section><br><br>
+
+        <section id="video-container">
+            <h2>Parte 3 · Video
+                <!-- Enlace con icono vectorial para volver al menú de navegación -->
+                <a href="#navegacion" class="back-to-navigation">
+                    <!-- Icono -->
+                    <i class="fas fa-arrow-up"></i>
+                </a><hr>
+            </h2>
+
+            <article id="video">
+                <!-- Imágenes y sus licencias -->
+                <div class="text-center">
+                    <h3>Reproducción de video</h3><br>
+                        <!-- Si le pongo el atributo "controls" se insertan los botones de control -->
+                        <video id="videoID" controls poster="../ut_04_01_img/05_composicion_mejorada_dim_1100.jpg" width="900px" height="500px">
+                            <!-- Fuentes de video compatibles con distintos navegadores -->
+                            <source src="../ut_04_03_video/01_video.mp4" type="video/mp4">
+                            <source src="../ut_04_03_video/02_video.avi" type="video/avi">
+                            Tu navegador no soporta el elemento de video.
+                        </video><br><br>
+
+                        <!-- Creo un conjunto de botones para controlar el reproductor -->
+                        <div  class="contenedor_audio">
+                            <h3>Botones Video</h3> 
+                            <button onclick="iniciarVideo()" type="button">Play Video</button>
+                            <button onclick="pausarVideo()" type="button">Pause Video</button>
+                            <button onclick="verDuracionVideo()" type="button">Ver Duración</button>
+                            <button onclick="subirVolumenVideo()" type="button">Subir Volumen</button>
+                            <button onclick="bajarVolumenVideo()" type="button">Bajar Volumen</button>
+                        </div><br>
+
+                        <img src="./assets/entrada_foro_video.png" height="40%" alt="Entrada Foro Video">
+                </div>
+            </article>
+        </section><br><br>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer id="footer" class="bg-secondary text-white text-center py-3">
+        <!--
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Licencias de las imágenes
+                <h3>Licencia 01_imagen.png</h3>
+                <img src="./assets/imagen/cc_licencia.png" width="300px" height="100px" alt="Licencia Imagen 01">
+            </div>
+
+            <div class="col-md-4">
+                <h3>Licencia 02_imagen.jpeg</h3>
+                <img src="./assets/imagen/cc-zero-licencia.png" width="300px" height="100px" alt="Licencia Imagen 02">
+            </div>
+
+            <div class="col-md-4">
+                <h3>Licencia 04_composicion.png</h3>
+                <img src="./assets/imagen/cc_licencia.png" width="300px" height="100px" alt="Licencia Imagen 03">
+            </div>
+        </div>-->
+
+        <div>
+            <h3 class="mb-3">· Software Utilizado ·</h3>
+            <ul class="list-unstyled">
+                <li>Para la edición de imágenes: <strong>GIMP y Inkscape</strong></li>
+                <li>Para la edición de audio: <strong>Audacity</strong></li>
+                <li>Para la edición de video: <strong>OneShot Video Editor</strong></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Selecciono el objeto audio deseado y lo asigno a la variable repro_audio
+        let repro_audio = document.getElementById("audioOriginal");
+        let repro_video = document.getElementById("videoID");
+
+        // Inicio la reproducción
+        function iniciar() { 
+            repro_audio.play(); 
+        } 
+
+        function iniciarVideo() { 
+            repro_video.play(); 
+        } 
+
+        // Pauso la reproducción
+        function pausar() { 
+            repro_audio.pause(); 
+        }
+
+        function pausarVideo() { 
+            repro_video.pause(); 
+        } 
+
+        // Paro y vuelvo al inicio.
+        function parar(){
+            repro_audio.pause();
+            repro_audio.currentTime = 0;
+        }
+
+        function pararVideo(){
+            repro_video.pause();
+            repro_video.currentTime = 0;
+        }
+
+        // Muestro la duración
+        function verDuracion(){
+            let duracionMin;
+
+            if (repro_audio.duration > 60) {
+                duracionMin = repro_audio.duration / 60;
+                alert("La duración del vídeo es de: " + duracionMin + " minutos.");
+            }//end if
+        }
+
+        function verDuracionVideo(){
+            let duracionMin;
+
+            if (repro_video.duration > 60) {
+                duracionMin = repro_video.duration / 60;
+                alert("La duración del vídeo es de: " + duracionMin + " minutos.");
+            }//end if
+        }
+
+        // Subar el volumen
+        function subirVolumen(){
+           if (repro_audio.volume > 0) {
+                repro_audio.volume = repro_audio.volume + 0.1;
+           }//end if
+        }
+
+        function subirVolumenVideo(){
+           if (repro_video.volume > 0) {
+                repro_video.volume = repro_video.volume + 0.1;
+           }//end if
+        }
+
+        // Bajar el volumen
+        function bajarVolumen(){
+           if (repro_audio.volume > 0) {
+                repro_audio.volume = repro_audio.volume - 0.1;
+           }//end if
+        }
+
+        function bajarVolumenVideo(){
+           if (repro_video.volume > 0) {
+                repro_video.volume = repro_video.volume - 0.1;
+           }//end if
+        }
+    </script>
+
+    <!-- Enlace para el menú de hamburguesa -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"crossorigin="anonymous"></script>
+</body>
+</html>
